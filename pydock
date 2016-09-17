@@ -1,0 +1,5 @@
+#!/bin/sh
+PYVER="$1"
+shift
+echo "PYVER=${PYVER}"
+exec docker run -it --rm --name ${PYVER} -v "$PWD":/home/nate -w /home/nate lernisto/${PYVER} "$@"

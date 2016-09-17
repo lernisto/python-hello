@@ -1,0 +1,6 @@
+#!/bin/sh
+PYVER="$1"
+shift
+cd /home/nate
+exec ./exec_as_owner.py ./create_venv.py .tox/${PYVER} \
+  ./install_requirements.py "$@"
