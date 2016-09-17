@@ -2,11 +2,12 @@
 .PHONY:  test clean
 
 test:
-	PYVER=2.7 ./dockertest
-	PYVER=3.3 ./dockertest
-	PYVER=3.4 ./dockertest
-	PYVER=3.5 ./dockertest
+	../pydocktest py27
+	../pydocktest py33
+	../pydocktest py34
+	../pydocktest py35
+	../pydocktest py36
 
 clean:
-	#find -name __pycache__ | xargs /bin/rm -rf
-	find -name '*.py[cod]' |xargs /bin/rm
+	find -name __pycache__ | xargs /bin/rm -rf
+	find -name '*.py[cod]' | xargs /bin/rm
